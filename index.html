@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Daniel Alwin | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Outfit',sans-serif;
+background:rgb(255, 255, 255);
+color:rgb(0, 0, 0);
+overflow-x:hidden;
+}
+
+/* PARTICLES */
+
+#particles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* MAIN */
+
+.main{
+display:flex;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:120px;
+height:100vh;
+padding:40px 25px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+border-right:1px solid rgba(0, 0, 0, 0.20);
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(8px);
+z-index:999;
+}
+
+.logo{
+font-size:42px;
+font-weight:800;
+}
+
+.nav{
+display:flex;
+flex-direction:column;
+gap:28px;
+}
+
+.nav a{
+text-decoration:none;
+color:rgb(0, 0, 0);
+font-size:14px;
+letter-spacing:2px;
+transition:0.3s;
+}
+
+.nav a:hover{
+color:rgb(0, 0, 0);
+transform:translateX(5px);
+}
+
+.socials{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.socials a{
+color:rgb(0, 0, 0);
+font-size:20px;
+transition:0.3s;
+}
+
+.socials a:hover{
+color:rgb(0, 0, 0);
+}
+
+/* CONTENT */
+
+.content{
+margin-left:120px;
+padding:50px;
+width:calc(100% - 120px);
+}
+
+/* HERO */
+
+.hero{
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:50px;
+align-items:center;
+min-height:100vh;
+}
+
+.hero small{
+font-size:14px;
+letter-spacing:4px;
+color:rgb(0, 0, 0);
+display:block;
+margin-bottom:25px;
+}
+
+.hero h1{
+font-size:110px;
+line-height:0.9;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.hero h3{
+font-size:24px;
+font-weight:400;
+letter-spacing:3px;
+color:rgb(0, 0, 0);
+margin-bottom:30px;
+}
+
+.hero h4{
+font-size:35px;
+font-weight:450;
+letter-spacing:4px;
+color:rgb(53, 53, 53);
+margin-bottom:30px;
+}
+
+.hero p{
+font-size:17px;
+line-height:2;
+color:rgb(0, 0, 0);
+max-width:650px;
+margin-bottom:40px;
+}
+
+.hero-btn{
+display:inline-flex;
+align-items:center;
+gap:15px;
+padding:18px 35px;
+border:1px solid rgba(0, 0, 0, 0.25);
+color:rgb(0, 0, 0);
+text-decoration:none;
+letter-spacing:2px;
+transition:0.4s;
+}
+
+.hero-btn:hover{
+background:rgb(255, 255, 255);
+color:rgb(255, 255, 255);
+}
+
+/* IMAGE */
+
+.image-box{
+width:420px;
+height:350px;
+border:0px solid rgba(0, 0, 0, 0.20);
+overflow:hidden;
+margin:auto;
+}
+
+.image-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* SECTION */
+
+.section{
+margin-top:50px;
+border:1px solid rgba(0, 0, 0, 0.20);
+padding:35px;
+background:rgba(255,255,255,0.02);
+}
+
+.section-title{
+font-size:14px;
+letter-spacing:4px;
+color:rgb(0, 0, 0);
+margin-bottom:35px;
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+/* SKILLS */
+
+.skill-list{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.skill{
+display:flex;
+justify-content:space-between;
+padding-bottom:15px;
+border-bottom:1px solid rgba(0, 0, 0, 0.20);
+}
+
+.skill h4{
+font-size:18px;
+font-weight:500;
+}
+
+/* ABOUT */
+
+.about{
+line-height:2;
+color:rgb(0, 0, 0);
+font-size:16px;
+}
+
+/* PROJECTS */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.project{
+border:1px solid rgba(0, 0, 0, 0.20);
+overflow:hidden;
+transition:0.4s;
+background:#ffffff;
+}
+
+.project:hover{
+transform:translateY(-8px);
+border-color:rgb(0, 0, 0);
+}
+
+.project img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.project-content{
+padding:18px;
+}
+
+.project-content h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.project-content p{
+font-size:14px;
+color:rgb(0, 0, 0);
+line-height:1.6;
+}
+
+/* TOOLS */
+
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(6,1fr);
+gap:20px;
+}
+
+.tool{
+border:1px solid rgba(0, 0, 0, 0.20);
+padding:30px 20px;
+text-align:center;
+transition:0.4s;
+}
+
+.tool:hover{
+background:rgb(0, 0, 0);
+color:rgb(255, 255, 255);
+}
+
+.tool img{
+width:55px;
+height:55px;
+object-fit:contain;
+margin-bottom:18px;
+}
+
+.tool p{
+font-size:15px;
+}
+
+/* CONTACT */
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.contact-title{
+font-size:70px;
+font-weight:800;
+line-height:1;
+}
+
+.contact-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.contact-box{
+border:1px solid rgba(0, 0, 0, 0.20);
+padding:25px;
+text-align:center;
+}
+
+.contact-box i{
+font-size:30px;
+margin-bottom:15px;
+}
+
+.contact-box h4{
+margin-bottom:10px;
+font-weight:500;
+}
+
+.contact-box p{
+font-size:14px;
+color:#999;
+}
+
+/* MOBILE */
+
+@media(max-width:1200px){
+
+.projects-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.tools-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.contact{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:70px;
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+width:100%;
+height:80px;
+flex-direction:row;
+align-items:center;
+padding:0 20px;
+}
+
+.nav{
+display:none;
+}
+
+.socials{
+flex-direction:row;
+}
+
+.content{
+margin-left:0;
+width:100%;
+padding:120px 20px 40px;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.hero h3{
+font-size:18px;
+}
+
+.hero h4{
+font-size:35px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.image-box{
+width:100%;
+height:420px;
+}
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+.tools-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.contact-title{
+font-size:45px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<div class="main">
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+DA.
+</div>
+
+<div class="nav">
+<a href="#">HOME</a>
+<a href="#">ABOUT</a>
+<a href="#">SKILLS</a>
+<a href="#">PROJECTS</a>
+<a href="#">TOOLS</a>
+<a href="#">CONTACT</a>
+</div>
+
+<div class="socials">
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-solid fa-envelope"></i></a>
+<a href="#"><i class="fa-solid fa-phone"></i></a>
+</div>
+
+</div>
+
+<!-- CONTENT -->
+
+<div class="content">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<small>HELLO, I'M</small>
+
+<h1>
+DANIEL<br>
+ALWIN
+</h1>
+<h4><span class="typewriter"></span></h4>
+<h3>
+GRAPHIC DESIGNER & AI CREATOR
+</h3>
+
+<p>
+I create stunning visual designs, cinematic edits, luxury invitations and AI-generated artworks that tell your story.
+</p>
+
+<a href="#projects" class="hero-btn">
+VIEW MY WORK
+<i class="fa-solid fa-arrow-right"></i>
+</a>
+
+</div>
+
+<div class="image-box">
+<img src="profile.png">
+</div>
+
+</section>
+
+<!-- ABOUT + SKILLS -->
+
+<div class="grid">
+
+<div class="section">
+
+<div class="section-title">
+• CREATIVE SKILLS
+</div>
+
+<div class="skill-list">
+
+<div class="skill">
+<h4>Graphic Design</h4>
+</div>
+
+<div class="skill">
+<h4>Photoshop Editing</h4>
+</div>
+
+<div class="skill">
+<h4>AI Creativity</h4>
+</div>
+
+<div class="skill">
+<h4>Motion Concepts</h4>
+</div>
+
+<div class="skill">
+<h4>Brand Identity</h4>
+</div>
+
+<div class="skill">
+<h4>Social Media Design</h4>
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<div class="section-title">
+• ABOUT ME
+</div>
+
+<div class="about">
+
+Professional graphic designer with expertise in CorelDRAW, Photoshop and modern design workflows.
+
+<br><br>
+
+Experienced with AI tools like ChatGPT and Gemini for creating futuristic visuals and innovative concepts.
+
+<br><br>
+
+Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="section">
+    <section class="section" id="projects"></section>
+
+<div class="section-title">
+• FEATURED PROJECTS
+</div>
+
+<div class="projects-grid">
+
+<div class="project">
+<img src="work1.jpg">
+<div class="project-content">
+<h3>Sample 1</h3>
+<p>Dispersion effect</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work2.jpg">
+<div class="project-content">
+<h3>Sample 2</h3>
+<p>Invitation card</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work3.jpg">
+<div class="project-content">
+<h3>Sample 3</h3>
+<p>Certificate design</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work4.jpg">
+<div class="project-content">
+<h3>Sample 4</h3>
+<p>Book Cover</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work5.jpg">
+<div class="project-content">
+<h3>Sample 5</h3>
+<p>Creative Art</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work6.jpg">
+<div class="project-content">
+<h3>Sample 6</h3>
+<p>Creative Logo</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work7.png">
+<div class="project-content">
+<h3>Sample 7</h3>
+<p>AI generated poster</p>
+</div>
+</div>
+
+<div class="project">
+<img src="work8.png">
+<div class="project-content">
+<h3>Sample 8</h3>
+<p>Thumbnail design</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<!-- TOOLS -->
+
+<div class="section">
+
+<div class="section-title">
+• CREATIVE TOOLS
+</div>
+
+<div class="tools-grid">
+
+<div class="tool">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/CorelDraw_logo.svg">
+<p>CorelDRAW</p>
+</div>
+
+<div class="tool">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png">
+<p>Photoshop</p>
+</div>
+
+<div class="tool">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+<p>ChatGPT</p>
+</div>
+
+<div class="tool">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg">
+<p>Gemini</p>
+</div>
+
+<div class="tool">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Microsoft_Office_Word_%282019%E2%80%932025%29.svg">
+<p>MS Word</p>
+</div>
+
+<div class="tool">
+<img src="https://i0.wp.com/nudityping.com/wp-content/uploads/2023/07/kannada-nudi-software-1.png?w=512&ssl=1">
+<p>Nudi</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="section contact">
+
+<div class="contact-title">
+LET’S CREATE<br>
+SOMETHING<br>
+AMAZING
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+<i class="fa-solid fa-envelope"></i>
+<h4>EMAIL</h4>
+<p>danielalwiin@gmail.com</p>
+</div>
+
+<div class="contact-box">
+<i class="fa-solid fa-phone"></i>
+<h4>PHONE</h4>
+<p>9483233710</p>
+</div>
+
+<div class="contact-box">
+<i class="fa-brands fa-instagram"></i>
+<h4>INSTAGRAM</h4>
+<p>@daniel_alwin_</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PARTICLES -->
+
+<script>
+
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+class Particle{
+
+constructor(){
+this.x = Math.random()*canvas.width;
+this.y = Math.random()*canvas.height;
+this.size = Math.random()*2;
+this.speedX = Math.random()*0.5 - 0.25;
+this.speedY = Math.random()*0.5 - 0.25;
+}
+
+update(){
+
+this.x += this.speedX;
+this.y += this.speedY;
+
+if(this.x > canvas.width) this.x = 0;
+if(this.x < 0) this.x = canvas.width;
+if(this.y > canvas.height) this.y = 0;
+if(this.y < 0) this.y = canvas.height;
+
+}
+
+draw(){
+
+ctx.fillStyle = "white";
+
+ctx.beginPath();
+ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+ctx.fill();
+
+}
+
+}
+
+function init(){
+
+particles = [];
+
+for(let i=0;i<120;i++){
+particles.push(new Particle());
+}
+
+}
+
+function connect(){
+
+for(let a=0;a<particles.length;a++){
+
+for(let b=a;b<particles.length;b++){
+
+let dx = particles[a].x - particles[b].x;
+let dy = particles[a].y - particles[b].y;
+
+let distance = dx*dx + dy*dy;
+
+if(distance < 12000){
+
+ctx.strokeStyle = "rgba(0,0,0,0.15)";
+ctx.lineWidth = 1;
+
+ctx.beginPath();
+ctx.moveTo(particles[a].x,particles[a].y);
+ctx.lineTo(particles[b].x,particles[b].y);
+ctx.stroke();
+
+}
+
+}
+
+}
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(particle=>{
+particle.update();
+particle.draw();
+});
+
+connect();
+
+requestAnimationFrame(animate);
+
+}
+
+init();
+animate();
+
+window.addEventListener('resize',()=>{
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+init();
+
+});
+
+</script>
+<script>
+    const texts = ["I blend tech with creativity.", "I generate A.I Artwork.",".....", "I craft brand identities.","I bring ideas to life.","....."];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+    
+    (function type() {
+        if (count === texts.length) {
+            count = 0;
+        }
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+        
+        document.querySelector('.typewriter').textContent = letter;
+        
+        if (letter.length === currentText.length) {
+            count++;
+            index = 0;
+            setTimeout(type, 2000); // Wait before starting next word
+        } else {
+            setTimeout(type, 100); // Typing speed
+        }
+    }());
+</script>
+
+</body>
+</html>
