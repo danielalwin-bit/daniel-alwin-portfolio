@@ -14,6 +14,14 @@
 
 <style>
 
+:root {
+    --bg-white: #ffffff;
+    --red-primary: #C62828; /* Bold Red */
+    --red-dark: #4A0000; /* Dark Red for readable text */
+    --red-light: rgba(198, 40, 40, 0.25); /* Faint Red for borders */
+    --red-hover: rgba(198, 40, 40, 0.1); /* Subtle Red for hovers */
+}
+
 *{
 margin:0;
 padding:0;
@@ -23,8 +31,8 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Outfit',sans-serif;
-background:rgb(255, 255, 255);
-color:rgb(0, 0, 0);
+background:var(--bg-white);
+color:var(--red-dark);
 overflow-x:hidden;
 }
 
@@ -57,8 +65,8 @@ padding:40px 25px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-border-right:1px solid rgba(0, 0, 0, 0.20);
-background:rgba(0,0,0,0.4);
+border-right:1px solid var(--red-light);
+background:rgba(255, 255, 255, 0.95);
 backdrop-filter:blur(8px);
 z-index:999;
 }
@@ -66,6 +74,7 @@ z-index:999;
 .logo{
 font-size:42px;
 font-weight:800;
+color: var(--red-primary);
 }
 
 .nav{
@@ -76,14 +85,15 @@ gap:28px;
 
 .nav a{
 text-decoration:none;
-color:rgb(0, 0, 0);
+color:var(--red-dark);
 font-size:14px;
 letter-spacing:2px;
 transition:0.3s;
+font-weight: 500;
 }
 
 .nav a:hover{
-color:rgb(0, 0, 0);
+color:var(--red-primary);
 transform:translateX(5px);
 }
 
@@ -94,13 +104,13 @@ gap:20px;
 }
 
 .socials a{
-color:rgb(0, 0, 0);
+color:var(--red-primary);
 font-size:20px;
 transition:0.3s;
 }
 
 .socials a:hover{
-color:rgb(0, 0, 0);
+color:var(--red-dark);
 }
 
 /* CONTENT */
@@ -124,9 +134,10 @@ min-height:100vh;
 .hero small{
 font-size:14px;
 letter-spacing:4px;
-color:rgb(0, 0, 0);
+color:var(--red-primary);
 display:block;
 margin-bottom:25px;
+font-weight:600;
 }
 
 .hero h1{
@@ -134,28 +145,29 @@ font-size:110px;
 line-height:0.9;
 font-weight:800;
 margin-bottom:25px;
+color: var(--red-primary);
 }
 
 .hero h3{
 font-size:24px;
 font-weight:400;
 letter-spacing:3px;
-color:rgb(0, 0, 0);
+color:var(--red-dark);
 margin-bottom:30px;
 }
 
 .hero h4{
 font-size:35px;
-font-weight:450;
+font-weight:500;
 letter-spacing:4px;
-color:rgb(53, 53, 53);
+color:var(--red-primary);
 margin-bottom:30px;
 }
 
 .hero p{
 font-size:17px;
 line-height:2;
-color:rgb(0, 0, 0);
+color:var(--red-dark);
 max-width:650px;
 margin-bottom:40px;
 }
@@ -165,16 +177,18 @@ display:inline-flex;
 align-items:center;
 gap:15px;
 padding:18px 35px;
-border:1px solid rgba(0, 0, 0, 0.25);
-color:rgb(0, 0, 0);
+border:1px solid var(--red-primary);
+color:var(--red-primary);
 text-decoration:none;
 letter-spacing:2px;
 transition:0.4s;
+font-weight: 600;
+background: transparent;
 }
 
 .hero-btn:hover{
-background:rgb(255, 255, 255);
-color:rgb(255, 255, 255);
+background:var(--red-primary);
+color:var(--bg-white);
 }
 
 /* IMAGE */
@@ -182,9 +196,10 @@ color:rgb(255, 255, 255);
 .image-box{
 width:400px;
 height:350px;
-border:0px solid rgba(0, 0, 0, 0.20);
+border:2px solid var(--red-primary);
 overflow:hidden;
 margin:auto;
+box-shadow: 0 15px 40px var(--red-light);
 }
 
 .image-box img{
@@ -197,16 +212,18 @@ object-fit:cover;
 
 .section{
 margin-top:50px;
-border:1px solid rgba(0, 0, 0, 0.20);
+border:1px solid var(--red-light);
 padding:35px;
-background:rgba(255,255,255,0.02);
+background:rgba(255, 255, 255, 0.8);
+backdrop-filter: blur(5px);
 }
 
 .section-title{
 font-size:14px;
 letter-spacing:4px;
-color:rgb(0, 0, 0);
+color:var(--red-primary);
 margin-bottom:35px;
+font-weight: 700;
 }
 
 /* GRID */
@@ -229,19 +246,20 @@ gap:25px;
 display:flex;
 justify-content:space-between;
 padding-bottom:15px;
-border-bottom:1px solid rgba(0, 0, 0, 0.20);
+border-bottom:1px solid var(--red-light);
 }
 
 .skill h4{
 font-size:18px;
 font-weight:500;
+color: var(--red-primary);
 }
 
 /* ABOUT */
 
 .about{
 line-height:2;
-color:rgb(0, 0, 0);
+color:var(--red-dark);
 font-size:16px;
 }
 
@@ -254,21 +272,23 @@ gap:20px;
 }
 
 .project{
-border:1px solid rgba(0, 0, 0, 0.20);
+border:1px solid var(--red-light);
 overflow:hidden;
 transition:0.4s;
-background:#ffffff;
+background:var(--bg-white);
 }
 
 .project:hover{
 transform:translateY(-8px);
-border-color:rgb(0, 0, 0);
+border-color:var(--red-primary);
+box-shadow: 0 10px 25px var(--red-light);
 }
 
 .project img{
 width:100%;
 height:220px;
 object-fit:cover;
+border-bottom: 1px solid var(--red-light);
 }
 
 .project-content{
@@ -278,11 +298,13 @@ padding:18px;
 .project-content h3{
 font-size:18px;
 margin-bottom:10px;
+color: var(--red-primary);
+font-weight: 600;
 }
 
 .project-content p{
 font-size:14px;
-color:rgb(0, 0, 0);
+color:var(--red-dark);
 line-height:1.6;
 }
 
@@ -295,15 +317,17 @@ gap:20px;
 }
 
 .tool{
-border:1px solid rgba(0, 0, 0, 0.20);
+border:1px solid var(--red-light);
 padding:30px 20px;
 text-align:center;
 transition:0.4s;
+background: var(--bg-white);
 }
 
 .tool:hover{
-background:rgb(0, 0, 0);
-color:rgb(255, 255, 255);
+background:var(--red-primary);
+color:var(--bg-white);
+border-color: var(--red-primary);
 }
 
 .tool img{
@@ -311,10 +335,12 @@ width:55px;
 height:55px;
 object-fit:contain;
 margin-bottom:18px;
+transition: 0.4s;
 }
 
 .tool p{
 font-size:15px;
+font-weight: 500;
 }
 
 /* CONTACT */
@@ -330,6 +356,7 @@ align-items:center;
 font-size:70px;
 font-weight:800;
 line-height:1;
+color: var(--red-primary);
 }
 
 .contact-grid{
@@ -339,24 +366,34 @@ gap:20px;
 }
 
 .contact-box{
-border:1px solid rgba(0, 0, 0, 0.20);
+border:1px solid var(--red-light);
 padding:25px;
 text-align:center;
+background: var(--bg-white);
+transition: 0.3s;
+}
+
+.contact-box:hover {
+border-color: var(--red-primary);
+box-shadow: 0 5px 15px var(--red-hover);
+transform: translateY(-5px);
 }
 
 .contact-box i{
 font-size:30px;
 margin-bottom:15px;
+color: var(--red-primary);
 }
 
 .contact-box h4{
 margin-bottom:10px;
-font-weight:500;
+font-weight:600;
+color: var(--red-primary);
 }
 
 .contact-box p{
 font-size:14px;
-color:#999;
+color:var(--red-dark);
 }
 
 /* MOBILE */
@@ -397,6 +434,8 @@ height:80px;
 flex-direction:row;
 align-items:center;
 padding:0 20px;
+border-right: none;
+border-bottom: 1px solid var(--red-light);
 }
 
 .nav{
@@ -471,18 +510,18 @@ DA.
 </div>
 
 <div class="nav">
-<a href="#">HOME</a>
-<a href="#">ABOUT</a>
-<a href="#">SKILLS</a>
-<a href="#">PROJECTS</a>
-<a href="#">TOOLS</a>
-<a href="#">CONTACT</a>
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#skills">SKILLS</a>
+<a href="#projects">PROJECTS</a>
+<a href="#tools">TOOLS</a>
+<a href="#contact">CONTACT</a>
 </div>
 
 <div class="socials">
-<a href="#"><i class="fa-brands fa-instagram"></i></a>
-<a href="#"><i class="fa-solid fa-envelope"></i></a>
-<a href="#"><i class="fa-solid fa-phone"></i></a>
+<a href="https://www.instagram.com/daniel_alwin_/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+<a href="mailto:danielalwiin@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+<a href="#contact"><i class="fa-solid fa-phone"></i></a>
 </div>
 
 </div>
@@ -493,7 +532,7 @@ DA.
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="home">
 
 <div>
 
@@ -520,7 +559,7 @@ VIEW MY WORK
 </div>
 
 <div class="image-box">
-<img src="profile.png">
+<img src="profile.png" alt="Daniel Alwin">
 </div>
 
 </section>
@@ -529,7 +568,7 @@ VIEW MY WORK
 
 <div class="grid">
 
-<div class="section">
+<div class="section" id="skills">
 
 <div class="section-title">
 • CREATIVE SKILLS
@@ -565,7 +604,7 @@ VIEW MY WORK
 
 </div>
 
-<div class="section">
+<div class="section" id="about">
 
 <div class="section-title">
 • ABOUT ME
@@ -591,8 +630,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 
 <!-- PROJECTS -->
 
-<div class="section">
-    <section class="section" id="projects"></section>
+<div class="section" id="projects">
 
 <div class="section-title">
 • FEATURED PROJECTS
@@ -601,7 +639,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 <div class="projects-grid">
 
 <div class="project">
-<img src="work1.jpg">
+<img src="work1.jpg" alt="Sample 1">
 <div class="project-content">
 <h3>Sample 1</h3>
 <p>Dispersion effect</p>
@@ -609,7 +647,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work2.jpg">
+<img src="work2.jpg" alt="Sample 2">
 <div class="project-content">
 <h3>Sample 2</h3>
 <p>Invitation card</p>
@@ -617,7 +655,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work3.jpg">
+<img src="work3.jpg" alt="Sample 3">
 <div class="project-content">
 <h3>Sample 3</h3>
 <p>Certificate design</p>
@@ -625,7 +663,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work4.jpg">
+<img src="work4.jpg" alt="Sample 4">
 <div class="project-content">
 <h3>Sample 4</h3>
 <p>Book Cover</p>
@@ -633,7 +671,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work5.jpg">
+<img src="work5.jpg" alt="Sample 5">
 <div class="project-content">
 <h3>Sample 5</h3>
 <p>Creative Art</p>
@@ -641,7 +679,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work6.jpg">
+<img src="work6.jpg" alt="Sample 6">
 <div class="project-content">
 <h3>Sample 6</h3>
 <p>Creative Logo</p>
@@ -649,7 +687,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work7.png">
+<img src="work7.png" alt="Sample 7">
 <div class="project-content">
 <h3>Sample 7</h3>
 <p>AI generated poster</p>
@@ -657,7 +695,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 <div class="project">
-<img src="work8.png">
+<img src="work8.png" alt="Sample 8">
 <div class="project-content">
 <h3>Sample 8</h3>
 <p>Thumbnail design</p>
@@ -670,7 +708,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 
 <!-- TOOLS -->
 
-<div class="section">
+<div class="section" id="tools">
 
 <div class="section-title">
 • CREATIVE TOOLS
@@ -679,32 +717,32 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 <div class="tools-grid">
 
 <div class="tool">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/CorelDraw_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/CorelDraw_logo.svg" alt="CorelDRAW">
 <p>CorelDRAW</p>
 </div>
 
 <div class="tool">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png">
+<img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Photoshop">
 <p>Photoshop</p>
 </div>
 
 <div class="tool">
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT">
 <p>ChatGPT</p>
 </div>
 
 <div class="tool">
-<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" alt="Gemini">
 <p>Gemini</p>
 </div>
 
 <div class="tool">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Microsoft_Office_Word_%282019%E2%80%932025%29.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Microsoft_Office_Word_%282019%E2%80%932025%29.svg" alt="MS Word">
 <p>MS Word</p>
 </div>
 
 <div class="tool">
-<img src="https://i0.wp.com/nudityping.com/wp-content/uploads/2023/07/kannada-nudi-software-1.png?w=512&ssl=1">
+<img src="https://i0.wp.com/nudityping.com/wp-content/uploads/2023/07/kannada-nudi-software-1.png?w=512&ssl=1" alt="Nudi">
 <p>Nudi</p>
 </div>
 
@@ -714,7 +752,7 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 
 <!-- CONTACT -->
 
-<div class="section contact">
+<div class="section contact" id="contact">
 
 <div class="contact-title">
 LET’S CREATE<br>
@@ -727,7 +765,7 @@ AMAZING
 <div class="contact-box">
 <i class="fa-solid fa-envelope"></i>
 <h4>EMAIL</h4>
-<p>danielalwiin@gmail.com</p>
+<a href="mailto:danielalwiin@gmail.com" style="text-decoration: none; color: var(--red-dark); font-size: 14px;">danielalwiin@gmail.com</a>
 </div>
 
 <div class="contact-box">
@@ -739,7 +777,7 @@ AMAZING
 <div class="contact-box">
 <i class="fa-brands fa-instagram"></i>
 <h4>INSTAGRAM</h4>
-<p>@daniel_alwin_</p>
+<a href="https://www.instagram.com/daniel_alwin_/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--red-dark); font-size: 14px;">@daniel_alwin_</a>
 </div>
 
 </div>
@@ -767,7 +805,8 @@ class Particle{
 constructor(){
 this.x = Math.random()*canvas.width;
 this.y = Math.random()*canvas.height;
-this.size = Math.random()*2;
+// Increased random size range: base size 1 up to 4.5
+this.size = Math.random() * 3.5 + 1; 
 this.speedX = Math.random()*0.5 - 0.25;
 this.speedY = Math.random()*0.5 - 0.25;
 }
@@ -786,7 +825,7 @@ if(this.y < 0) this.y = canvas.height;
 
 draw(){
 
-ctx.fillStyle = "white";
+ctx.fillStyle = "#C62828"; // Red Particles
 
 ctx.beginPath();
 ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
@@ -806,35 +845,6 @@ particles.push(new Particle());
 
 }
 
-function connect(){
-
-for(let a=0;a<particles.length;a++){
-
-for(let b=a;b<particles.length;b++){
-
-let dx = particles[a].x - particles[b].x;
-let dy = particles[a].y - particles[b].y;
-
-let distance = dx*dx + dy*dy;
-
-if(distance < 12000){
-
-ctx.strokeStyle = "rgba(0,0,0,0.15)";
-ctx.lineWidth = 1;
-
-ctx.beginPath();
-ctx.moveTo(particles[a].x,particles[a].y);
-ctx.lineTo(particles[b].x,particles[b].y);
-ctx.stroke();
-
-}
-
-}
-
-}
-
-}
-
 function animate(){
 
 ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -844,7 +854,7 @@ particle.update();
 particle.draw();
 });
 
-connect();
+// connect function call removed to prevent drawing lines
 
 requestAnimationFrame(animate);
 
