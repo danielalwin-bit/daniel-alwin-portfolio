@@ -468,9 +468,11 @@ font-size:35px;
 font-size:15px;
 }
 
+/* FIXED IMAGE BOX FOR MOBILE */
 .image-box{
-width:100%;
-height:420px;
+width: 280px;
+height: 280px;
+margin: 0 auto;
 }
 
 .projects-grid{
@@ -501,8 +503,6 @@ font-size:45px;
 
 <div class="main">
 
-<!-- SIDEBAR -->
-
 <div class="sidebar">
 
 <div class="logo">
@@ -526,11 +526,7 @@ DA.
 
 </div>
 
-<!-- CONTENT -->
-
 <div class="content">
-
-<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -563,8 +559,6 @@ VIEW MY WORK
 </div>
 
 </section>
-
-<!-- ABOUT + SKILLS -->
 
 <div class="grid">
 
@@ -627,8 +621,6 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 </div>
 
 </div>
-
-<!-- PROJECTS -->
 
 <div class="section" id="projects">
 
@@ -706,8 +698,6 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 
 </div>
 
-<!-- TOOLS -->
-
 <div class="section" id="tools">
 
 <div class="section-title">
@@ -750,8 +740,6 @@ Skilled in MS Word, presentations, English & Kannada typing (Nudi 4 & 6).
 
 </div>
 
-<!-- CONTACT -->
-
 <div class="section contact" id="contact">
 
 <div class="contact-title">
@@ -788,8 +776,6 @@ AMAZING
 
 </div>
 
-<!-- PARTICLES -->
-
 <script>
 
 const canvas = document.getElementById('particles');
@@ -805,8 +791,12 @@ class Particle{
 constructor(){
 this.x = Math.random()*canvas.width;
 this.y = Math.random()*canvas.height;
-// Increased random size range: base size 1 up to 4.5
-this.size = Math.random() * 3.5 + 1; 
+
+// FIX FOR MOBILE: Adjust particle size based on screen width
+const isMobile = window.innerWidth <= 768;
+// If mobile, size is between 0.5 and 2. If desktop, size is between 1 and 4.5
+this.size = isMobile ? (Math.random() * 1.5 + 0.5) : (Math.random() * 3.5 + 1); 
+
 this.speedX = Math.random()*0.5 - 0.25;
 this.speedY = Math.random()*0.5 - 0.25;
 }
@@ -854,8 +844,6 @@ particle.update();
 particle.draw();
 });
 
-// connect function call removed to prevent drawing lines
-
 requestAnimationFrame(animate);
 
 }
@@ -868,6 +856,7 @@ window.addEventListener('resize',()=>{
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+// Re-initialize particles on screen resize so the sizes recalculate correctly
 init();
 
 });
