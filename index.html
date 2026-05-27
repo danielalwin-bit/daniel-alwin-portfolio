@@ -15,11 +15,13 @@
 <style>
 
 :root {
-    --bg-white: #ffffff;
-    --red-primary: #C62828; /* Bold Red */
-    --red-dark: #4A0000; /* Dark Red for readable text */
-    --red-light: rgba(198, 40, 40, 0.25); /* Faint Red for borders */
-    --red-hover: rgba(198, 40, 40, 0.1); /* Subtle Red for hovers */
+    --bg-main: #0B1120; /* Deep Luxury Navy Blue */
+    --bg-card: rgba(15, 23, 42, 0.7); /* Transparent Dark Blue for sections */
+    --gold-primary: #D4AF37; /* Metallic Gold */
+    --text-main: #FFFFFF; /* Crisp White */
+    --text-light: #A0AABF; /* Soft Grey-Blue for paragraphs */
+    --gold-light: rgba(212, 175, 55, 0.25); /* Faint Gold for borders */
+    --gold-hover: rgba(212, 175, 55, 0.1); /* Subtle Gold for hovers */
 }
 
 *{
@@ -31,8 +33,8 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Outfit',sans-serif;
-background:var(--bg-white);
-color:var(--red-dark);
+background:var(--bg-main);
+color:var(--text-main);
 overflow-x:hidden;
 }
 
@@ -65,16 +67,16 @@ padding:40px 25px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-border-right:1px solid var(--red-light);
-background:rgba(255, 255, 255, 0.95);
-backdrop-filter:blur(8px);
+border-right:1px solid var(--gold-light);
+background:rgba(11, 17, 32, 0.95);
+backdrop-filter:blur(10px);
 z-index:999;
 }
 
 .logo{
 font-size:42px;
 font-weight:800;
-color: var(--red-primary);
+color: var(--gold-primary);
 }
 
 .nav{
@@ -85,7 +87,7 @@ gap:28px;
 
 .nav a{
 text-decoration:none;
-color:var(--red-dark);
+color:var(--text-main);
 font-size:14px;
 letter-spacing:2px;
 transition:0.3s;
@@ -93,7 +95,7 @@ font-weight: 500;
 }
 
 .nav a:hover{
-color:var(--red-primary);
+color:var(--gold-primary);
 transform:translateX(5px);
 }
 
@@ -104,13 +106,13 @@ gap:20px;
 }
 
 .socials a{
-color:var(--red-primary);
+color:var(--gold-primary);
 font-size:20px;
 transition:0.3s;
 }
 
 .socials a:hover{
-color:var(--red-dark);
+color:var(--text-main);
 }
 
 /* CONTENT */
@@ -132,9 +134,9 @@ min-height:100vh;
 }
 
 .hero small{
-font-size:14px;
+font-size:20px;
 letter-spacing:4px;
-color:var(--red-primary);
+color:var(--gold-primary);
 display:block;
 margin-bottom:25px;
 font-weight:600;
@@ -145,14 +147,14 @@ font-size:110px;
 line-height:0.9;
 font-weight:800;
 margin-bottom:25px;
-color: var(--red-primary);
+color: var(--text-main);
 }
 
 .hero h3{
 font-size:24px;
 font-weight:400;
 letter-spacing:3px;
-color:var(--red-dark);
+color:var(--text-main);
 margin-bottom:30px;
 }
 
@@ -160,14 +162,14 @@ margin-bottom:30px;
 font-size:35px;
 font-weight:500;
 letter-spacing:4px;
-color:var(--red-primary);
+color:var(--gold-primary);
 margin-bottom:30px;
 }
 
 .hero p{
 font-size:17px;
 line-height:2;
-color:var(--red-dark);
+color:var(--text-main);
 max-width:650px;
 margin-bottom:40px;
 }
@@ -177,8 +179,8 @@ display:inline-flex;
 align-items:center;
 gap:15px;
 padding:18px 35px;
-border:1px solid var(--red-primary);
-color:var(--red-primary);
+border:1px solid var(--gold-primary);
+color:var(--gold-primary);
 text-decoration:none;
 letter-spacing:2px;
 transition:0.4s;
@@ -187,8 +189,8 @@ background: transparent;
 }
 
 .hero-btn:hover{
-background:var(--red-primary);
-color:var(--bg-white);
+background:var(--gold-primary);
+color:var(--bg-main);
 }
 
 /* IMAGE */
@@ -196,10 +198,10 @@ color:var(--bg-white);
 .image-box{
 width:400px;
 height:350px;
-border:2px solid var(--red-primary);
+border:2px solid var(--gold-primary);
 overflow:hidden;
 margin:auto;
-box-shadow: 0 15px 40px var(--red-light);
+box-shadow: 0 15px 40px var(--gold-hover);
 }
 
 .image-box img{
@@ -212,16 +214,16 @@ object-fit:cover;
 
 .section{
 margin-top:50px;
-border:1px solid var(--red-light);
+border:1px solid var(--gold-light);
 padding:35px;
-background:rgba(255, 255, 255, 0.8);
-backdrop-filter: blur(5px);
+background:var(--bg-card);
+backdrop-filter: blur(8px);
 }
 
 .section-title{
 font-size:14px;
 letter-spacing:4px;
-color:var(--red-primary);
+color:var(--gold-primary);
 margin-bottom:35px;
 font-weight: 700;
 }
@@ -246,20 +248,20 @@ gap:25px;
 display:flex;
 justify-content:space-between;
 padding-bottom:15px;
-border-bottom:1px solid var(--red-light);
+border-bottom:1px solid var(--gold-light);
 }
 
 .skill h4{
 font-size:18px;
 font-weight:500;
-color: var(--red-primary);
+color: var(--text-main);
 }
 
 /* ABOUT */
 
 .about{
 line-height:2;
-color:var(--red-dark);
+color:var(--text-light);
 font-size:16px;
 }
 
@@ -272,23 +274,23 @@ gap:20px;
 }
 
 .project{
-border:1px solid var(--red-light);
+border:1px solid var(--gold-light);
 overflow:hidden;
 transition:0.4s;
-background:var(--bg-white);
+background:var(--bg-main);
 }
 
 .project:hover{
 transform:translateY(-8px);
-border-color:var(--red-primary);
-box-shadow: 0 10px 25px var(--red-light);
+border-color:var(--gold-primary);
+box-shadow: 0 10px 25px var(--gold-hover);
 }
 
 .project img{
 width:100%;
 height:220px;
 object-fit:cover;
-border-bottom: 1px solid var(--red-light);
+border-bottom: 1px solid var(--gold-light);
 }
 
 .project-content{
@@ -298,13 +300,13 @@ padding:18px;
 .project-content h3{
 font-size:18px;
 margin-bottom:10px;
-color: var(--red-primary);
+color: var(--gold-primary);
 font-weight: 600;
 }
 
 .project-content p{
 font-size:14px;
-color:var(--red-dark);
+color:var(--text-light);
 line-height:1.6;
 }
 
@@ -317,17 +319,16 @@ gap:20px;
 }
 
 .tool{
-border:1px solid var(--red-light);
+border:1px solid var(--gold-light);
 padding:30px 20px;
 text-align:center;
 transition:0.4s;
-background: var(--bg-white);
+background: var(--bg-main);
 }
 
 .tool:hover{
-background:var(--red-primary);
-color:var(--bg-white);
-border-color: var(--red-primary);
+background:var(--gold-hover);
+border-color: var(--gold-primary);
 }
 
 .tool img{
@@ -341,6 +342,7 @@ transition: 0.4s;
 .tool p{
 font-size:15px;
 font-weight: 500;
+color: var(--text-main);
 }
 
 /* CONTACT */
@@ -356,7 +358,7 @@ align-items:center;
 font-size:70px;
 font-weight:800;
 line-height:1;
-color: var(--red-primary);
+color: var(--text-main);
 }
 
 .contact-grid{
@@ -366,34 +368,34 @@ gap:20px;
 }
 
 .contact-box{
-border:1px solid var(--red-light);
+border:1px solid var(--gold-light);
 padding:25px;
 text-align:center;
-background: var(--bg-white);
+background: var(--bg-main);
 transition: 0.3s;
 }
 
 .contact-box:hover {
-border-color: var(--red-primary);
-box-shadow: 0 5px 15px var(--red-hover);
+border-color: var(--gold-primary);
+box-shadow: 0 5px 15px var(--gold-hover);
 transform: translateY(-5px);
 }
 
 .contact-box i{
 font-size:30px;
 margin-bottom:15px;
-color: var(--red-primary);
+color: var(--gold-primary);
 }
 
 .contact-box h4{
 margin-bottom:10px;
 font-weight:600;
-color: var(--red-primary);
+color: var(--gold-primary);
 }
 
 .contact-box p{
 font-size:14px;
-color:var(--red-dark);
+color:var(--text-light);
 }
 
 /* MOBILE */
@@ -435,7 +437,7 @@ flex-direction:row;
 align-items:center;
 padding:0 20px;
 border-right: none;
-border-bottom: 1px solid var(--red-light);
+border-bottom: 1px solid var(--gold-light);
 }
 
 .nav{
@@ -753,7 +755,7 @@ AMAZING
 <div class="contact-box">
 <i class="fa-solid fa-envelope"></i>
 <h4>EMAIL</h4>
-<a href="mailto:danielalwiin@gmail.com" style="text-decoration: none; color: var(--red-dark); font-size: 14px;">danielalwiin@gmail.com</a>
+<a href="mailto:danielalwiin@gmail.com" style="text-decoration: none; color: var(--text-light); font-size: 14px;">danielalwiin@gmail.com</a>
 </div>
 
 <div class="contact-box">
@@ -765,7 +767,7 @@ AMAZING
 <div class="contact-box">
 <i class="fa-brands fa-instagram"></i>
 <h4>INSTAGRAM</h4>
-<a href="https://www.instagram.com/daniel_alwin_/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--red-dark); font-size: 14px;">@daniel_alwin_</a>
+<a href="https://www.instagram.com/daniel_alwin_/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: var(--text-light); font-size: 14px;">@daniel_alwin_</a>
 </div>
 
 </div>
@@ -792,9 +794,8 @@ constructor(){
 this.x = Math.random()*canvas.width;
 this.y = Math.random()*canvas.height;
 
-// FIX FOR MOBILE: Adjust particle size based on screen width
+// Adaptive sizing for mobile and desktop
 const isMobile = window.innerWidth <= 768;
-// If mobile, size is between 0.5 and 2. If desktop, size is between 1 and 4.5
 this.size = isMobile ? (Math.random() * 1.5 + 0.5) : (Math.random() * 3.5 + 1); 
 
 this.speedX = Math.random()*0.5 - 0.25;
@@ -815,7 +816,7 @@ if(this.y < 0) this.y = canvas.height;
 
 draw(){
 
-ctx.fillStyle = "#C62828"; // Red Particles
+ctx.fillStyle = "#D4AF37"; // Luxury Gold Particles
 
 ctx.beginPath();
 ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
@@ -856,7 +857,7 @@ window.addEventListener('resize',()=>{
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-// Re-initialize particles on screen resize so the sizes recalculate correctly
+// Re-initialize particles on screen resize
 init();
 
 });
